@@ -1,10 +1,9 @@
 package com.taotao.rest.pojo;
 
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
-
-public class CatNode{
+public class CatNode {
     @JsonProperty("u")
     private String url;
     @JsonProperty("n")

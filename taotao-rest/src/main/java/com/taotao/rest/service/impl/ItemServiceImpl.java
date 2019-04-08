@@ -1,18 +1,18 @@
 package com.taotao.rest.service.impl;
 
-import com.mysql.jdbc.StringUtils;
+import java.util.List;
 import com.taotao.mapper.TbItemDescMapper;
 import com.taotao.mapper.TbItemMapper;
 import com.taotao.mapper.TbItemParamItemMapper;
-import com.taotao.pojo.*;
+import com.taotao.pojo.TbItem;
+import com.taotao.pojo.TbItemDesc;
+import com.taotao.pojo.TbItemParamItem;
+import com.taotao.pojo.TbItemParamItemExample;
 import com.taotao.rest.component.JedisClient;
 import com.taotao.rest.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import utils.JsonUtils;
-
-import java.util.List;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -68,7 +68,7 @@ public class ItemServiceImpl implements ItemService {
 
 
         //根据商品ID查询商品基本信息
-        TbItem item =  itemMapper.selectByPrimaryKey(itemId);
+        TbItem item = itemMapper.selectByPrimaryKey(itemId);
         return item;
     }
 
@@ -101,7 +101,7 @@ public class ItemServiceImpl implements ItemService {
 
 
         //根据商品ID查询商品基本信息
-        TbItemDesc itemDesc =  itemDescMapper.selectByPrimaryKey(itemId);
+        TbItemDesc itemDesc = itemDescMapper.selectByPrimaryKey(itemId);
         return itemDesc;
     }
 
@@ -144,9 +144,8 @@ public class ItemServiceImpl implements ItemService {
         TbItemParamItemExample example = new TbItemParamItemExample();
         TbItemParamItemExample.Criteria criteria = example.createCriteria();
         criteria.andItemIdEqualTo(itemId);
-        List<TbItemParamItem> list =  itemParamItemMapper.selectByExampleWithBLOBs(example);
-        if(list!=null && list.size()>0)
-        {
+        List<TbItemParamItem> list = itemParamItemMapper.selectByExampleWithBLOBs(example);
+        if (list != null && list.size() > 0) {
             TbItemParamItem itemParamItem = list.get(0);
             return itemParamItem;
         }

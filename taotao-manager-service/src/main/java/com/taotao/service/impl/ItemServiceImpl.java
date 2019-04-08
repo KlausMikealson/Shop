@@ -1,22 +1,25 @@
 package com.taotao.service.impl;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.taotao.common.pojo.EasyUIDataGridResult;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.IDUtils;
+import com.taotao.common.utils.JsonUtils;
 import com.taotao.mapper.TbItemDescMapper;
 import com.taotao.mapper.TbItemMapper;
 import com.taotao.mapper.TbItemParamItemMapper;
-import com.taotao.pojo.*;
+import com.taotao.pojo.TbItem;
+import com.taotao.pojo.TbItemDesc;
+import com.taotao.pojo.TbItemExample;
+import com.taotao.pojo.TbItemParamItem;
+import com.taotao.pojo.TbItemParamItemExample;
 import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import utils.IDUtils;
-import utils.JsonUtils;
-
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -28,15 +31,14 @@ public class ItemServiceImpl implements ItemService {
     @Autowired
     private TbItemParamItemMapper itemParamItemMapper;
 
-    public TbItem getItemById(Long itemId)
-    {
+    public TbItem getItemById(Long itemId) {
         TbItem item = null;
         TbItemExample example = new TbItemExample();
         TbItemExample.Criteria criteria = example.createCriteria();
         criteria.andIdEqualTo(itemId);
         List<TbItem> list = itemMapper.selectByExample(example);
-        if(list!=null && list.size()>0)
-            item =  list.get(0);
+        if (list != null && list.size() > 0)
+            item = list.get(0);
         return item;
     }
 
@@ -63,7 +65,7 @@ public class ItemServiceImpl implements ItemService {
         //补全TbItem属性
         item.setId(itemID);
         //商品状态：1-正常，2-下架，3-删除
-        item.setStatus((byte)1);
+        item.setStatus((byte) 1);
         //创建时间和更新时间
         Date date = new Date();
         item.setCreated(date);
@@ -94,7 +96,7 @@ public class ItemServiceImpl implements ItemService {
         TbItemParamItemExample.Criteria criteria = example.createCriteria();
         criteria.andItemIdEqualTo(itemId);
         List<TbItemParamItem> list = itemParamItemMapper.selectByExampleWithBLOBs(example);
-        if(list==null || list.isEmpty())
+        if (list == null || list.isEmpty())
             return "";
         TbItemParamItem itemParamItem = list.get(0);
         String paramData = itemParamItem.getParamData();
@@ -102,26 +104,22 @@ public class ItemServiceImpl implements ItemService {
         StringBuffer sb = new StringBuffer();
 
         sb.append("<table cellpadding=\"0\" cellspacing=\"1\" width=\"100%\" border=\"1\">\n");
-        sb.append("	<tbody>\n");
-        for(Map map:mapList)
-        {
-            sb.append("		<tr>\n");
-            sb.append("			<th colspan=\"2\">"+map.get("group")+"</th>\n");
-            sb.append("		</tr>\n");
-            List<Map> mapList2 = (List<Map>)map.get("params");
-            for(Map map2 : mapList2)
-            {
-                sb.append("		<tr>\n");
-                sb.append("			<td>"+map2.get("k") +"</td>\n");
-                sb.append("			<td>"+map2.get("v")+"</td>\n");
-                sb.append("		</tr>\n");
+        sb.append("<tbody>\n");
+        for (Map map : mapList) {
+            sb.append("<tr>\n");
+            sb.append("<th colspan=\"2\">" + map.get("group") + "</th>\n");
+            sb.append("</tr>\n");
+            List<Map> mapList2 = (List<Map>) map.get("params");
+            for (Map map2 : mapList2) {
+                sb.append("<tr>\n");
+                sb.append("<td>" + map2.get("k") + "</td>\n");
+                sb.append("<td>" + map2.get("v") + "</td>\n");
+                sb.append("</tr>\n");
             }
         }
-        sb.append("	</tbody>\n");
+        sb.append("</tbody>\n");
         sb.append("</table>");
 
         return sb.toString();
     }
-
-
 }

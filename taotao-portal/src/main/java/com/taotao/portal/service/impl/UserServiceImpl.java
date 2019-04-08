@@ -1,16 +1,15 @@
 package com.taotao.portal.service.impl;
 
-import com.taotao.common.pojo.HttpClientUtil;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.CookieUtils;
+import com.taotao.common.utils.HttpClientUtil;
 import com.taotao.pojo.TbUser;
 import com.taotao.portal.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import utils.CookieUtils;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 @Service
 public class UserServiceImpl implements UserService {
 

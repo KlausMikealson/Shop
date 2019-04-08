@@ -1,7 +1,7 @@
 package com.taotao.search.controller;
 
-import com.taotao.common.pojo.ExceptionUtil;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.ExceptionUtil;
 import com.taotao.search.pojo.SearchResult;
 import com.taotao.search.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,11 +1,11 @@
 package com.taotao.portal.service.impl;
 
-import com.taotao.common.pojo.HttpClientUtil;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.HttpClientUtil;
+import com.taotao.common.utils.JsonUtils;
 import com.taotao.portal.pojo.OrderInfo;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import utils.JsonUtils;
 
 @Service
 public class OrderServiceImpl implements OrderService {

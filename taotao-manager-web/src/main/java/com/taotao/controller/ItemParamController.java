@@ -1,5 +1,6 @@
 package com.taotao.controller;
 
+import com.taotao.common.pojo.EasyUIDataGridResult;
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.service.ItemParamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,36 +16,21 @@ public class ItemParamController {
 
     @RequestMapping("/item/param/query/itemcatid/{cid}")
     @ResponseBody
-    public TaotaoResult getItemCatByCid(@PathVariable Long cid)
-    {
+    public TaotaoResult getItemCatByCid(@PathVariable Long cid) {
         return itemParamService.getItemParamByCid(cid);
     }
 
     @RequestMapping("/item/param/save/{cid}")
     @ResponseBody
-    public TaotaoResult insertItemParam(@PathVariable Long cid, String paramData)
-    {
+    public TaotaoResult insertItemParam(@PathVariable Long cid, String paramData) {
         return itemParamService.insertItemParam(cid, paramData);
     }
+
+    @RequestMapping("/item/param/list")
+    @ResponseBody
+    public EasyUIDataGridResult getItemParamList(Integer page, Integer rows) {
+        return itemParamService.getItemParamList(page, rows);
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

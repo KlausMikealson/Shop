@@ -43,7 +43,7 @@ public class ItemController {
     {
         String html = itemService.getItemParamHtml(itemId);
         model.addAttribute("myhtml", html);
-        return "itemparam";
+        return "item-param";
     }
 }
 

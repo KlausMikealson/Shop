@@ -1,7 +1,10 @@
 package com.taotao.portal.service.impl;
 
-import com.taotao.common.pojo.HttpClientUtil;
+import java.util.List;
+import java.util.Map;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.HttpClientUtil;
+import com.taotao.common.utils.JsonUtils;
 import com.taotao.pojo.TbItem;
 import com.taotao.pojo.TbItemDesc;
 import com.taotao.pojo.TbItemParamItem;
@@ -9,10 +12,6 @@ import com.taotao.portal.pojo.PortalItem;
 import com.taotao.portal.service.ItemService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import utils.JsonUtils;
-
-import java.util.List;
-import java.util.Map;
 
 @Service
 public class ItemServiceImpl implements ItemService {

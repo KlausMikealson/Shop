@@ -20,7 +20,9 @@ public class ContentCategoryController {
     @ResponseBody
     public List<EasyUITreeNode> getContentCatList(@RequestParam(value = "id", defaultValue = "0")Long parentId)
     {
-        return contentCategoryService.getContentCatList(parentId);
+        List<EasyUITreeNode> list = contentCategoryService.getContentCatList(parentId);
+        System.out.println(list.size());
+        return list;
     }
 
     @RequestMapping("/content/category/create")

@@ -1,17 +1,15 @@
 package com.taotao.portal.service.impl;
 
-import com.taotao.common.pojo.HttpClientUtil;
+import java.util.ArrayList;
+import java.util.List;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.HttpClientUtil;
+import com.taotao.common.utils.JsonUtils;
 import com.taotao.pojo.TbContent;
 import com.taotao.portal.pojo.AdNode;
 import com.taotao.portal.service.ContentService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import utils.JsonUtils;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 @Service
 public class ContentServiceImpl implements ContentService {

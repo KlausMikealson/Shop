@@ -1,7 +1,8 @@
 package com.taotao.controller;
 
-import com.taotao.common.pojo.HttpClientUtil;
+import com.taotao.common.pojo.EasyUIDataGridResult;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.HttpClientUtil;
 import com.taotao.pojo.TbContent;
 import com.taotao.service.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import sun.net.www.http.HttpClient;
 
 @Controller
 public class ContentController {
@@ -22,42 +22,18 @@ public class ContentController {
 
     @RequestMapping("/content/save")
     @ResponseBody
-    public TaotaoResult insertContent(TbContent content)
-    {
+    public TaotaoResult insertContent(TbContent content) {
         TaotaoResult result = contentService.insertContent(content);
         //调用删除redis缓存的服务
-        HttpClientUtil.doGet(REST_BASE_URL+REST_CONTENT_SYNC_URL+content.getCategoryId());
+        HttpClientUtil.doGet(REST_BASE_URL + REST_CONTENT_SYNC_URL + content.getCategoryId());
         return result;
     }
+
+    @RequestMapping("/content/query/list")
+    @ResponseBody
+    public EasyUIDataGridResult getContentList(Long categoryId, Integer page, Integer rows) {
+        return contentService.getContentList(categoryId, page, rows);
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

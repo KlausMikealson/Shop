@@ -1,3 +1,5 @@
+import java.util.HashSet;
+import java.util.Set;
 import com.taotao.rest.component.JedisClient;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -6,9 +8,6 @@ import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisCluster;
 import redis.clients.jedis.JedisPool;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class JedisTest {
     //测试单机版

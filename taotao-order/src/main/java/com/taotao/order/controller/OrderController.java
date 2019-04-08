@@ -1,7 +1,7 @@
 package com.taotao.order.controller;
 
-import com.taotao.common.pojo.ExceptionUtil;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.ExceptionUtil;
 import com.taotao.order.pojo.OrderInfo;
 import com.taotao.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;

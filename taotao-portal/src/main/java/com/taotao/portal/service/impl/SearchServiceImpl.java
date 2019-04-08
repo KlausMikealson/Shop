@@ -1,14 +1,13 @@
 package com.taotao.portal.service.impl;
 
-import com.taotao.common.pojo.HttpClientUtil;
+import java.util.HashMap;
+import java.util.Map;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.HttpClientUtil;
 import com.taotao.portal.pojo.SearchResult;
 import com.taotao.portal.service.SearchService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class SearchServiceImpl implements SearchService {
