@@ -13,7 +13,7 @@ public class SolrJTest {
     @Test
     public void testSolrJ() throws IOException, SolrServerException {
         //创建链接
-        SolrServer solrServer = new HttpSolrServer("http://192.168.223.128:8080/solr");
+        SolrServer solrServer = new HttpSolrServer("http://59.110.137.45:8080/solr");
         //创建文档对象
         SolrInputDocument document = new SolrInputDocument();
         //添加域
@@ -30,7 +30,7 @@ public class SolrJTest {
     @Test
     public void testQuery() throws SolrServerException {
         //创建链接
-        SolrServer solrServer = new HttpSolrServer("http://192.168.223.128:8080/solr");
+        SolrServer solrServer = new HttpSolrServer("http://59.110.137.45:8080/solr");
         //创建一个查询对象
         SolrQuery query = new SolrQuery();
         query.setQuery("*:*");

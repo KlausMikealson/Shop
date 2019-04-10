@@ -2,7 +2,7 @@ package com.taotao.controller;
 
 import com.taotao.common.pojo.EasyUIDataGridResult;
 import com.taotao.common.pojo.TaotaoResult;
-import com.taotao.common.utils.HttpClientUtil;
+
 import com.taotao.pojo.TbContent;
 import com.taotao.service.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;

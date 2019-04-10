@@ -24,12 +24,14 @@ public class ContentServiceImpl implements ContentService {
     @Override
     public String getAd1List() {
         //调用服务获得数据
-        String json = HttpClientUtil.doGet(REST_BASE_URL+REST_CONTENT_URL+REST_CONTENT_AD1_CID);
+        String json = HttpClientUtil.doGet(REST_BASE_URL + REST_CONTENT_URL + REST_CONTENT_AD1_CID);
+        System.out.println(REST_BASE_URL + REST_CONTENT_URL + REST_CONTENT_AD1_CID);
+        System.out.println("===================");
+        System.out.println(json);
         TaotaoResult taotaoResult = TaotaoResult.formatToList(json, TbContent.class);
         List<TbContent> contentList = (List<TbContent>) taotaoResult.getData();
         List<AdNode> resultList = new ArrayList<>();
-        for(TbContent tbContent : contentList)
-        {
+        for (TbContent tbContent : contentList) {
             AdNode node = new AdNode();
             node.setHeight(240);
             node.setWidth(670);

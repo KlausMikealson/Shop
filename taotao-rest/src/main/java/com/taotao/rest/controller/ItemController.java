@@ -20,15 +20,11 @@ public class ItemController {
 
     @RequestMapping("/base/{itemId}")
     @ResponseBody
-    public TaotaoResult getItemById(@PathVariable Long itemId)
-    {
-        try
-        {
+    public TaotaoResult getItemById(@PathVariable Long itemId) {
+        try {
             TbItem item = itemService.getItemById(itemId);
             return TaotaoResult.ok(item);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
         }
@@ -36,15 +32,11 @@ public class ItemController {
 
     @RequestMapping("/desc/{itemId}")
     @ResponseBody
-    public TaotaoResult getItemDescById(@PathVariable Long itemId)
-    {
-        try
-        {
+    public TaotaoResult getItemDescById(@PathVariable Long itemId) {
+        try {
             TbItemDesc itemDesc = itemService.getItemDescById(itemId);
             return TaotaoResult.ok(itemDesc);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
         }
@@ -52,15 +44,11 @@ public class ItemController {
 
     @RequestMapping("/param/{itemId}")
     @ResponseBody
-    public TaotaoResult getItemParamById(@PathVariable Long itemId)
-    {
-        try
-        {
+    public TaotaoResult getItemParamById(@PathVariable Long itemId) {
+        try {
             TbItemParamItem itemParamItem = itemService.getItemParamItemById(itemId);
             return TaotaoResult.ok(itemParamItem);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
         }

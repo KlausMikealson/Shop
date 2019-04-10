@@ -32,7 +32,7 @@ public class RegisterController {
         return result;
     }
 
-    @RequestMapping(value = "user/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/register", method = RequestMethod.POST)
     @ResponseBody
     public TaotaoResult register(TbUser user)
     {

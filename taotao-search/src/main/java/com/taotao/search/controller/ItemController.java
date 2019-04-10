@@ -15,38 +15,15 @@ public class ItemController {
 
     @RequestMapping("/importall")
     @ResponseBody
-    public TaotaoResult importAll()
-    {
+    public TaotaoResult importAll() {
         try {
             TaotaoResult result = itemService.importItems();
             return result;
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

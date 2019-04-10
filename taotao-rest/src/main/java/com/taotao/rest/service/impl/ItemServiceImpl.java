@@ -23,8 +23,8 @@ public class ItemServiceImpl implements ItemService {
     @Autowired
     private TbItemParamItemMapper itemParamItemMapper;
 
-    @Autowired
-    private JedisClient jedisClient;
+    // @Autowired
+    // private JedisClient jedisClient;
 
     @Value("${REDIS_CONTENT_KEY}")
     private String REDIS_CONTENT_KEY;

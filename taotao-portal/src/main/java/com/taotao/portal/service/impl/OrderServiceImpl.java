@@ -18,7 +18,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public String createOrder(OrderInfo orderInfo) {
         String json = JsonUtils.objectToJson(orderInfo);
-        String jsonResult = HttpClientUtil.doPostJson(ORDER_BASE_URL+ORDER_CREATE_URL, json);
+        String jsonResult = HttpClientUtil.doPostJson(ORDER_BASE_URL + ORDER_CREATE_URL, json);
         TaotaoResult taotaoResult = TaotaoResult.format(jsonResult);
         return taotaoResult.getData().toString();
     }
