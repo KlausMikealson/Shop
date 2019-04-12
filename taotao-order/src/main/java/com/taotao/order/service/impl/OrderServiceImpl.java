@@ -47,7 +47,7 @@ public class OrderServiceImpl implements OrderService {
         //1——未付款，2——已付款，3——未发货，4——已发货，5——交易成功，6——交易关闭
         orderInfo.setStatus(1);
         Date date = new Date();
-        orderInfo.setCloseTime(date);
+        orderInfo.setCreateTime(date);
         orderInfo.setUpdateTime(date);
         orderMapper.insert(orderInfo);
         //插入orderdetal

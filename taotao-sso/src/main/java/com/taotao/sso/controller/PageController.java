@@ -15,7 +15,7 @@ public class PageController {
         return "login";
     }
 
-    @RequestMapping("/user/showRegister")
+    @RequestMapping("/page/register")
     public String showRegister()
     {
         return "register";

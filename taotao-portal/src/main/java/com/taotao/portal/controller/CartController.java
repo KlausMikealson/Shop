@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,8 +24,6 @@ public class CartController {
     @RequestMapping("/cart/add/{itemId}")
     public String addCart(@PathVariable Long itemId, @RequestParam("num") Integer num, HttpServletRequest request, HttpServletResponse response)
     {
-        System.out.println("====================================================");
-        System.out.println(num);
         cartService.addCart(itemId, num, request, response);
         return "cartSuccess";
     }
@@ -37,7 +36,7 @@ public class CartController {
         return "cart";
     }
 
-    @RequestMapping("/cart/update/num/{itemId}/{num}")
+    @RequestMapping(value = "/cart/update/num/{itemId}/{num}", method = RequestMethod.POST)
     @ResponseBody
     public TaotaoResult updateCartList(@PathVariable Long itemId, @PathVariable Integer num, HttpServletRequest request, HttpServletResponse response)
     {

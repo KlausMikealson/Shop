@@ -42,12 +42,12 @@
 		<input type="hidden" name="payment" value="<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${totalPrice/100 }"/>"/>
 		<input type="hidden" name="postFee" value="0"/>
 		<input type="hidden" name="buyerMessage" value=""/>
-		<input type="hidden" name="orderShipping.receiverName" value="入云龙"/>
-		<input type="hidden" name="orderShipping.receiverMobile" value="15891588888"/>
+		<input type="hidden" name="orderShipping.receiverName" value="张慧"/>
+		<input type="hidden" name="orderShipping.receiverMobile" value="110"/>
 		<input type="hidden" name="orderShipping.receiverState" value="北京"/>
 		<input type="hidden" name="orderShipping.receiverCity" value="北京"/>
-		<input type="hidden" name="orderShipping.receiverDistrict" value="昌平区"/>
-		<input type="hidden" name="orderShipping.receiverAddress" value="西三旗 xxxxxxxxx"/>
+		<input type="hidden" name="orderShipping.receiverDistrict" value="海淀区"/>
+		<input type="hidden" name="orderShipping.receiverAddress" value="啦啦啦"/>
 </form>
 
 <!-- main -->
@@ -81,13 +81,13 @@
 						<b></b>
 						<div class="user-name">
 							<div class="fl">
-								<strong limit="4">入云龙</strong>&nbsp;&nbsp;收
+								<strong limit="4">张慧</strong>&nbsp;&nbsp;收
 							</div>
-							<div class="fr">158****8888</div>
+							<div class="fr">110</div>
 							<div class="clr"></div>
 						</div>
-						<div class="mt10" limit="15">北京 昌平区 五环外六环里</div>
-						<div class="adr-m" limit="30">西三旗 xxxxxxxxx</div>
+						<div class="mt10" limit="15">北京 海淀区</div>
+						<div class="adr-m" limit="30">啦啦啦</div>
 						<div class="op-btns ar">
 							<a href="#none"
 								class="ftx-05 mr10 setdefault-consignee hide"
@@ -227,9 +227,9 @@
 			<ul>
 				<li class="mode-tab-item " id="jd_shipment_item"
 					onclick="doSwithTab('pay')"><span
-					id="jdShip-span-tip" class="m-txt">淘淘快递<i
+					id="jdShip-span-tip" class="m-txt">顺丰快递<i
 						class='qmark-icon qmark-tip'
-						data-tips='由淘淘公司负责配送，速度很快，还接受上门刷卡付款服务'></i></span><b></b></li>
+						data-tips='由顺丰负责配送，速度很快，还接受上门刷卡付款服务'></i></span><b></b></li>
 			</ul>
 		</div>
 	</div>

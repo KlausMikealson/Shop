@@ -5,8 +5,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.taotao.common.pojo.TaotaoResult;
-import com.taotao.common.utils.CookieUtils;
-import com.taotao.common.utils.JsonUtils;
+import com.taotao.common.*;
 import com.taotao.mapper.TbUserMapper;
 import com.taotao.pojo.TbUser;
 import com.taotao.pojo.TbUserExample;
@@ -17,6 +16,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.StringUtils;
+import com.taotao.common.utils.*;
 
 @Service
 public class LoginServiceImpl implements LoginService {
